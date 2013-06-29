@@ -27,5 +27,11 @@
     <ClCompile Include="min_cost_flow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MinCostMaxFlow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PersistentSegmentTree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
