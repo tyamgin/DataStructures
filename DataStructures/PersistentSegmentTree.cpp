@@ -3,6 +3,8 @@
  *
  */
 
+#if 0
+
 #pragma comment(linker, "/STACK:500000000")
 #include <functional>
 #include <algorithm> 
@@ -126,3 +128,5 @@ int main()
 		printf("%d\n", x++);
 	}
 }
+
+#endif

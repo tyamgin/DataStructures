@@ -78,10 +78,13 @@
   <ItemGroup>
     <ClCompile Include="BoasTree.cpp" />
     <ClCompile Include="ImplicitTreapMin.cpp" />
+    <ClCompile Include="MillerRabinPrimeTestLong.cpp" />
     <ClCompile Include="MinCostMaxFlow.cpp" />
+    <ClCompile Include="MinCostMaxFlowMultigraph.cpp" />
     <ClCompile Include="min_cost_flow.cpp" />
     <ClCompile Include="PersistentSegmentTree.cpp" />
     <ClCompile Include="QMatrix.cpp" />
+    <ClCompile Include="SuffixArray.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

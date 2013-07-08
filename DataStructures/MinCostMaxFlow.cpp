@@ -6,6 +6,7 @@
  * http://acm.timus.ru/problem.aspx?space=1&num=1076
  */
 
+#if 0
 
 #pragma comment(linker, "/STACK:500000000") 
 #include <functional>
@@ -128,3 +129,5 @@ int main()
 	pair<int, int> res = mcmf.minCostMaxFlow(2*n, 2*n+1);
 	printf("%d\n", res.second);
 }
+
+#endif
