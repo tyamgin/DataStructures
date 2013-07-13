@@ -78,6 +78,7 @@
   <ItemGroup>
     <ClCompile Include="BoasTree.cpp" />
     <ClCompile Include="ImplicitTreapMin.cpp" />
+    <ClCompile Include="MillerRabinPrimeTestInt.cpp" />
     <ClCompile Include="MillerRabinPrimeTestLong.cpp" />
     <ClCompile Include="MinCostMaxFlow.cpp" />
     <ClCompile Include="MinCostMaxFlowMultigraph.cpp" />
