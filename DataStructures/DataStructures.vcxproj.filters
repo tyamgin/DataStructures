@@ -45,5 +45,14 @@
     <ClCompile Include="SegmentTree.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MillerRabinPrimeTestInt.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Long.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FenwickTree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
