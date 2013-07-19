@@ -51,6 +51,9 @@ public:
 	FenwickTreeSum(int size) {
 		Initialize(size);
 	}
+
+	FenwickTreeSum() {
+	}
 };
 
 int main()
