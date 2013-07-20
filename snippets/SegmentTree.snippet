@@ -37,58 +37,70 @@
         </Literal>
       </Declarations>
       <Code Language="cpp">
-          <![CDATA[#define OPER(a, b) $oper$
-const int ppow = 1 << $ppow$;
-const int default_value = $def$;
-struct SegmentTree
+          <![CDATA[template <typename Type, class MainOperator, class AddOperator = MainOperator> class SegmentTree
 {
-	$Type$ t[ppow * 2];
+protected:
+	vector<Type> t;
+	int ppow;
+	Type defaultValue;
+	MainOperator Operator;
+	AddOperator addOperator;
 
-	SegmentTree()
+public:
+
+	SegmentTree(int size, Type defaultValue)
 	{
-		for(int i = ppow * 2 - 1; i >= 0; i--)
-			t[i] = default_value;
+		this->ppow = size;
+		this->defaultValue = defaultValue;
+		t.assign(ppow * 2, *new Type());
 	}
 
-	$Type$ F(int L, int R)
+	Type Get(int L, int R) 
 	{
 		L += ppow;
 		R += ppow;
-		$Type$ res = default_value;
+		Type res = defaultValue;
 		while(L <= R)
 		{
 			if (L & 1)
-				res = OPER(res, t[L++]);
+				res = Operator(res, t[L++]);
 			if (~R & 1)
-				res = OPER(res, t[R--]);
+				res = Operator(res, t[R--]);
 			L /= 2;
 			R /= 2;
 		}
 		return res;
 	}
 
-	void Add(int pos, $Type$ value)
+	void Add(int pos, Type value)
 	{
 		pos += ppow;
-		t[pos] += value;
+		t[pos] = addOperator(t[pos], value);
 		pos /= 2;
 		while(pos > 0)
 		{
-			t[pos] = OPER(t[pos * 2], t[pos * 2 + 1]);
+			t[pos] = Operator(t[pos * 2], t[pos * 2 + 1]);
 			pos /= 2;
 		}
 	}
 
-	void Set(int pos, $Type$ value)
+	void Set(int pos, Type value)
 	{
 		pos += ppow;
 		t[pos] = value;
 		pos /= 2;
 		while(pos > 0)
 		{
-			t[pos] = OPER(t[pos * 2], t[pos * 2 + 1]);
+			t[pos] = Operator(t[pos * 2], t[pos * 2 + 1]);
 			pos /= 2;
 		}
+	}
+};
+
+
+struct Sum {
+	int operator() (int a, int b) {
+		return a + b;
 	}
 };
           ]]>
