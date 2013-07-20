@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>gcd</Title>
+      <Shortcut>gcd</Shortcut>
+      <Description>Code snippet for gcd</Description>
+      <Author>Tyamgin</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+        <SnippetType>SurroundsWith</SnippetType>
+      </SnippetTypes>
+    </Header>
+    
+    
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>Type</ID>
+          <Default>int</Default>
+          <ToolTip>Type</ToolTip>
+        </Literal>
+      </Declarations>
+      <Code Language="cpp">
+          <![CDATA[$Type$ gcd($Type$ a, $Type$ b)
+			  {
+          return b ? gcd(b, a % b) : a;
+			  }]]>
+      </Code>
+    </Snippet>
+
+  </CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>modpow</Title>
+      <Shortcut>modpow</Shortcut>
+      <Description>Code snippet for modpow</Description>
+      <Author>Tyamgin</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+        <SnippetType>SurroundsWith</SnippetType>
+      </SnippetTypes>
+    </Header>
+    
+    
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>Type</ID>
+          <Default>int</Default>
+          <ToolTip>Type</ToolTip>
+        </Literal>
+      </Declarations>
+      <Code Language="cpp">
+          <![CDATA[$Type$ modpow($Type$ a, $Type$ n, $Type$ mod)
+{
+	$Type$ b = 1;
+	while(n > 0)
+	{
+		if (n & 1)
+			b = (long long)b * a % mod;
+		n >>= 1;
+		a = (long long)a * a % mod;
+	}
+	return b;
+			  }]]>
+      </Code>
+    </Snippet>
+
+  </CodeSnippet>
+</CodeSnippets>

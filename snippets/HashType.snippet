@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>HashType</Title>
+      <Shortcut>HashType</Shortcut>
+      <Description>Code snippet for HashType</Description>
+      <Author>Tyamgin</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+        <SnippetType>SurroundsWith</SnippetType>
+      </SnippetTypes>
+    </Header>
+    
+    
+    <Snippet>
+      <Declarations>
+
+      </Declarations>
+      <Code Language="cpp">
+          <![CDATA[#define mods 5
+int mod[] = {1e9 + 7, 1e9 + 8, 1e9 + 9, 1e9 + 6, 1e9 + 5};
+
+struct HashType
+{
+    int hash[mods];
+
+    HashType(int val = 0)
+    {
+        fill(hash, hash + mods, val);
+    }
+
+    HashType operator *(const HashType &h)
+    {
+        HashType res;
+        for(int i = 0; i < mods; i++)
+            res.hash[i] = (Int)hash[i] * h.hash[i] % mod[i];
+        return res;
+    }
+
+    HashType operator +(const HashType &h)
+    {
+        HashType res;
+        for(int i = 0; i < mods; i++)
+            res.hash[i] = (hash[i] + h.hash[i]) % mod[i];
+        return res;
+    }
+
+    HashType operator -(const HashType &h)
+    {
+        HashType res;
+        for(int i = 0; i < mods; i++)
+            res.hash[i] = ((Int)hash[i] - h.hash[i] + mod[i]) % mod[i];
+        return res;
+    }
+
+    HashType operator *(int h)
+    {
+        HashType res;
+        for(int i = 0; i < mods; i++)
+            res.hash[i] = (Int)hash[i] * h % mod[i];
+        return res;
+    }
+
+    bool operator ==(const HashType &h)
+    {
+        return !memcmp(hash, h.hash, mods * sizeof(int));
+    }
+};
+          ]]>
+      </Code>
+    </Snippet>
+
+  </CodeSnippet>
+</CodeSnippets>

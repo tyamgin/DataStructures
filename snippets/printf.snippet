@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>printf</Title>
+      <Shortcut>printf</Shortcut>
+      <Description>Code snippet for printf</Description>
+      <Author>Tyamgin</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+        <SnippetType>SurroundsWith</SnippetType>
+      </SnippetTypes>
+    </Header>
+    
+    
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>n</ID>
+          <Default>n</Default>
+          <ToolTip>size</ToolTip>
+        </Literal>
+        <Literal>
+          <ID>A</ID>
+          <Default>A</Default>
+          <ToolTip>Array</ToolTip>
+        </Literal>
+      </Declarations>
+      <Code Language="cpp">
+          <![CDATA[printf("%d", $A$[0]);
+          for(int i = 1; i < $n$; i++)
+            printf(" %d", $A$[i]);
+          puts("");
+			  $selected$ $end$]]>
+      </Code>
+    </Snippet>
+
+  </CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>SegmentTree</Title>
+      <Shortcut>SegmentTree</Shortcut>
+      <Description>Code snippet for SegmentTree</Description>
+      <Author>Tyamgin</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+        <SnippetType>SurroundsWith</SnippetType>
+      </SnippetTypes>
+    </Header>
+    
+    
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>oper</ID>
+          <Default>(a + b)</Default>
+          <ToolTip>Operation</ToolTip>
+        </Literal>
+        <Literal>
+          <ID>ppow</ID>
+          <Default>20</Default>
+          <ToolTip>Power of 2</ToolTip>
+        </Literal>
+        <Literal>
+          <ID>Type</ID>
+          <Default>int</Default>
+          <ToolTip>Type</ToolTip>
+        </Literal>
+        <Literal>
+          <ID>def</ID>
+          <Default>0</Default>
+          <ToolTip>Default Value</ToolTip>
+        </Literal>
+      </Declarations>
+      <Code Language="cpp">
+          <![CDATA[#define OPER(a, b) $oper$
+const int ppow = 1 << $ppow$;
+const int default_value = $def$;
+struct SegmentTree
+{
+	$Type$ t[ppow * 2];
+
+	SegmentTree()
+	{
+		for(int i = ppow * 2 - 1; i >= 0; i--)
+			t[i] = default_value;
+	}
+
+	$Type$ F(int L, int R)
+	{
+		L += ppow;
+		R += ppow;
+		$Type$ res = default_value;
+		while(L <= R)
+		{
+			if (L & 1)
+				res = OPER(res, t[L++]);
+			if (~R & 1)
+				res = OPER(res, t[R--]);
+			L /= 2;
+			R /= 2;
+		}
+		return res;
+	}
+
+	void Add(int pos, $Type$ value)
+	{
+		pos += ppow;
+		t[pos] += value;
+		pos /= 2;
+		while(pos > 0)
+		{
+			t[pos] = OPER(t[pos * 2], t[pos * 2 + 1]);
+			pos /= 2;
+		}
+	}
+
+	void Set(int pos, $Type$ value)
+	{
+		pos += ppow;
+		t[pos] = value;
+		pos /= 2;
+		while(pos > 0)
+		{
+			t[pos] = OPER(t[pos * 2], t[pos * 2 + 1]);
+			pos /= 2;
+		}
+	}
+};
+          ]]>
+      </Code>
+    </Snippet>
+
+  </CodeSnippet>
+</CodeSnippets>
