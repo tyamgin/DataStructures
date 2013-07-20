@@ -15,26 +15,7 @@
     
     <Snippet>
       <Declarations>
-        <Literal>
-          <ID>oper</ID>
-          <Default>(a + b)</Default>
-          <ToolTip>Operation</ToolTip>
-        </Literal>
-        <Literal>
-          <ID>ppow</ID>
-          <Default>20</Default>
-          <ToolTip>Power of 2</ToolTip>
-        </Literal>
-        <Literal>
-          <ID>Type</ID>
-          <Default>int</Default>
-          <ToolTip>Type</ToolTip>
-        </Literal>
-        <Literal>
-          <ID>def</ID>
-          <Default>0</Default>
-          <ToolTip>Default Value</ToolTip>
-        </Literal>
+        
       </Declarations>
       <Code Language="cpp">
           <![CDATA[template <typename Type, class MainOperator, class AddOperator = MainOperator> class SegmentTree
@@ -45,16 +26,13 @@ protected:
 	Type defaultValue;
 	MainOperator Operator;
 	AddOperator addOperator;
-
 public:
-
 	SegmentTree(int size, Type defaultValue)
 	{
 		this->ppow = size;
 		this->defaultValue = defaultValue;
 		t.assign(ppow * 2, *new Type());
 	}
-
 	Type Get(int L, int R) 
 	{
 		L += ppow;
@@ -71,7 +49,6 @@ public:
 		}
 		return res;
 	}
-
 	void Add(int pos, Type value)
 	{
 		pos += ppow;
@@ -83,7 +60,6 @@ public:
 			pos /= 2;
 		}
 	}
-
 	void Set(int pos, Type value)
 	{
 		pos += ppow;
@@ -97,12 +73,7 @@ public:
 	}
 };
 
-
-struct Sum {
-	int operator() (int a, int b) {
-		return a + b;
-	}
-};
+struct Sum { int operator() (int a, int b) { return a + b; } };
           ]]>
       </Code>
     </Snippet>
