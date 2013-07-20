@@ -1,0 +1,1 @@
+C:\Program Files\Microsoft Visual Studio 11.0\VC\Snippets\1033\Visual C++
