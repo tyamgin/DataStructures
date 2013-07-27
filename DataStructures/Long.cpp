@@ -1,4 +1,4 @@
-#if 0
+#define TESTING 0
 
 #pragma comment(linker, "/STACK:500000000") 
 #include <functional>
@@ -42,14 +42,28 @@ struct Long {
 		while(L <= R) 
 		{
 			unsigned long long c = (L + R) / 2;
-			if (c*c <= a)
+			if (c*c <= (unsigned long long)a)
 				L = c + 1, result = c;
 			else
 				R = c - 1;
 		}
 		return result;
 	}
+
+	unsigned short randUnsignedShort() {
+		return (unsigned short)rand();
+	}
+
+	unsigned randUnsignedInt() {
+		return ((unsigned)randUnsignedShort() << 16) + (unsigned)randUnsignedShort();
+	}
+
+	unsigned long long randUnsignedLL() {
+		return ((unsigned long long)randUnsignedInt() << (unsigned long long)32) + (unsigned long long)randUnsignedInt();
+	}
 };
+
+#if TESTING
 
 void check()
 {

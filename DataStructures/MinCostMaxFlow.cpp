@@ -6,7 +6,7 @@
  * http://acm.timus.ru/problem.aspx?space=1&num=1076
  */
 
-#if 0
+#define TESTING 0
 
 #pragma comment(linker, "/STACK:500000000") 
 #include <functional>
@@ -102,6 +102,8 @@ struct MinCostMaxFlow
 		}
 	}
 };
+
+#if TESTING
 
 int A[MAXN][MAXN];
 

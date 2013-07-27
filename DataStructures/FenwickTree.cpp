@@ -1,3 +1,5 @@
+#define TESTING 0
+
 #pragma comment(linker, "/STACK:500000000") 
 #include <functional>
 #include <algorithm> 
@@ -56,6 +58,8 @@ public:
 	}
 };
 
+#if TESTING
+
 int main()
 {
 	FenwickTreeSum<int> tree(10);
@@ -64,3 +68,5 @@ int main()
 	tree.Add(5, -1);
 	cout << tree.Sum(3, 9) << endl;
 }
+
+#endif

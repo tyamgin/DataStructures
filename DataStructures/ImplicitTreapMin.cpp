@@ -1,7 +1,7 @@
 // Циклические RMQ
 // http://codeforces.ru/contest/52/submission/1705990
 
-#if 0
+#define TESTING 0
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -161,6 +161,8 @@ struct ImplicitTreap
 		}
 	}
 };
+
+#if TESTING
 
 ImplicitTreap tree;
 

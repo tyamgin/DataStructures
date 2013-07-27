@@ -26,12 +26,28 @@ protected:
 	Type defaultValue;
 	MainOperator Operator;
 	AddOperator addOperator;
+
 public:
 	SegmentTree(int size, Type defaultValue)
 	{
 		this->ppow = size;
 		this->defaultValue = defaultValue;
-		t.assign(ppow * 2, *new Type());
+		t.assign(ppow * 2, defaultValue);
+	}
+	
+	template<typename Iterator> 
+	SegmentTree(Iterator begin, Iterator end, Type defaultValue) 
+	{
+		this->defaultValue = defaultValue;
+		vector<Type> values(begin, end);
+		ppow = values.size();
+		while(ppow & (ppow - 1))
+			ppow++;
+		t.assign(ppow * 2, defaultValue);
+		for(int i = 0; i < (int)values.size(); i++)
+			t[i + ppow] = values[i];
+		for(int i = ppow - 1; i > 0; i--)
+			t[i] = Operator(t[i * 2], t[i * 2 + 1]);
 	}
 	Type Get(int L, int R) 
 	{

@@ -5,7 +5,7 @@
  * http://acm.timus.ru/problem.aspx?space=1&num=1076
  */
 
-#if 0
+#define TESTING 0
 
 #pragma comment(linker, "/STACK:500000000") 
 #include <functional>
@@ -82,7 +82,7 @@ struct MinCostMaxFlowMultigraph
 			if (v < 0)
 				break;
 			used[v] = true;
-			for(int i = 0; i < g[v].size(); i++) {
+			for(int i = 0; i < (int)g[v].size(); i++) {
 				Edge &e = g[v][i];
 				int w = d[v] + phi[v] - phi[e.to] + e.cost;
 				if (e.cap > 0 && w < d[e.to]) {
@@ -108,6 +108,8 @@ struct MinCostMaxFlowMultigraph
 		}
 	}
 };
+
+#if TESTING
 
 int A[MAXN][MAXN];
 

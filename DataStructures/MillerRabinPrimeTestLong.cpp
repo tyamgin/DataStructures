@@ -1,10 +1,10 @@
-#if 0
+#define TESTING 0
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
-long long modmul( long long a, long long b, long long m ) 
+long long modmul(long long a, long long b, long long m) 
 {
 	long long q = (long long)((long double)a * (long double)b / (long double)m);
 	long long r = a * b - q * m;
@@ -55,6 +55,8 @@ char isPrime(long long n, int rounds)
 			return 0;
 	return 1;
 }
+
+#if TESTING
 
 int main()
 {

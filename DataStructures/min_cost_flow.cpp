@@ -1,4 +1,9 @@
-#if 0
+/*
+ *  based in Levit algo
+ *  description: http://e-maxx.ru/algo/levit_algorithm & http://e-maxx.ru/algo/min_cost_flow
+ */
+
+#define TESTING 0
 
 #include <stdio.h>
 #include <algorithm>
@@ -85,4 +90,5 @@ void min_cost(int n, int s, int t, int max_fl, int &cost, int &flow)
 	}
 }
 
+#if TESTING
 #endif

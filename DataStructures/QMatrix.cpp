@@ -1,4 +1,4 @@
-#if 0
+#define TESTING 0
 
 #pragma comment(linker, "/STACK:500000000") 
 #include <functional>
@@ -108,4 +108,5 @@ public:
 	}
 };
 
+#if TESTING
 #endif

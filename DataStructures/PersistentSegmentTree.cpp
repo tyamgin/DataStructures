@@ -3,7 +3,7 @@
  *
  */
 
-#if 0
+#define TESTING 0
 
 #pragma comment(linker, "/STACK:500000000")
 #include <functional>
@@ -95,6 +95,8 @@ struct Tree
 		return getSum(top[time + 1], 0, ppow - 1, L, R);
 	}
 };
+
+#if TESTING
 
 int A[ppow], B[ppow], pos[ppow];
 int x = 0, n;

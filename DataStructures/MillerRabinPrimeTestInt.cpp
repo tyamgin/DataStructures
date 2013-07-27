@@ -1,4 +1,12 @@
-#if 0
+#define TESTING 0
+
+// isPrime2
+// first 2 primes for 1000000
+// first 3 primes for 10000000
+// first 3 primes for 100000000 (except 25326001)
+// first 4 primes for 1000000000
+// first 3 primes for 1000000000 (except 25326001 161304001 960946321)
+// {2, 5, 7}      for 1000000000 (except 746331041)
 
 #pragma comment(linker, "/STACK:500000000") 
 #include <functional>
@@ -25,7 +33,7 @@ using namespace std;
 
 #define MAXN 1000000000
 
-static int primes[] = {2, 5, 7, 11, 13, 17, 19};
+static int primes[] = {2, 3, 5, 7, 11, 13, 17, 19};
 
 class Miller_Rabin
 {
@@ -88,6 +96,8 @@ public:
 	}
 };
 
+#if TESTING
+
 bool isPrime(Int n)
 {
 	if (n < 2)
@@ -120,14 +130,3 @@ int main()
 }
 
 #endif
-
-// isPrime
-// 1000000 - 4-6
-
-// isPrime2
-// first 2 primes for 1000000
-// first 3 primes for 10000000
-// first 3 primes for 100000000 (except 25326001)
-// first 4 primes for 1000000000
-// first 3 primes for 1000000000 (except 25326001 161304001 960946321)
-// {2, 5, 7}      for 1000000000 (except 746331041)

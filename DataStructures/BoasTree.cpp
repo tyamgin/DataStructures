@@ -1,7 +1,7 @@
 // Дерево ван Эмде Боаса
 // http://habrahabr.ru/post/125499/
 
-#if 0
+#define TESTING 0
 
 #include <vector>
 using namespace std;
@@ -76,6 +76,8 @@ struct BoasTree
 		return merge(next_idx, child[next_idx]->Min);
 	}
 };
+
+#if TESTING
 
 unsigned randUnsigned()
 {
