@@ -89,6 +89,7 @@
     <ClCompile Include="QMatrix.cpp" />
     <ClCompile Include="QuadroTree.cpp" />
     <ClCompile Include="SegmentTree.cpp" />
+    <ClCompile Include="SegmentTreeAddRange.cpp" />
     <ClCompile Include="SuffixArray.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
