@@ -42,7 +42,10 @@
     <ClCompile Include="MillerRabinPrimeTestLong.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SegmentTree.cpp">
+    <ClCompile Include="MillerRabinPrimeTestInt.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Treap.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MillerRabinPrimeTestInt.cpp">
