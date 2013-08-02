@@ -1,35 +1,51 @@
-﻿Build started 28.07.2013 23:09:52.
-Project "D:\DataStructures\DataStructures\DataStructures.vcxproj" on node 2 (Build target(s)).
-ClCompile:
-  C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt SegmentTreeAddRange.cpp
-  SegmentTreeAddRange.cpp
-SegmentTreeAddRange.cpp(118): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-          C:\Program Files\Microsoft Visual Studio 11.0\VC\include\stdio.h(290) : see declaration of 'scanf'
-SegmentTreeAddRange.cpp(122): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-          C:\Program Files\Microsoft Visual Studio 11.0\VC\include\stdio.h(290) : see declaration of 'scanf'
-SegmentTreeAddRange.cpp(133): warning C4018: '<' : signed/unsigned mismatch
-SegmentTreeAddRange.cpp(148): warning C4018: '<' : signed/unsigned mismatch
-Link:
-  C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\DataStructures\Release\DataStructures.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\DataStructures\Release\DataStructures.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\DataStructures\Release\DataStructures.lib" /MACHINE:X86 /SAFESEH Release\BoasTree.obj
-  Release\FenwickTree.obj
-  Release\ImplicitTreapMin.obj
-  Release\Long.obj
-  Release\MillerRabinPrimeTestInt.obj
-  Release\MillerRabinPrimeTestLong.obj
-  Release\MinCostMaxFlow.obj
-  Release\MinCostMaxFlowMultigraph.obj
-  Release\min_cost_flow.obj
-  Release\PersistentSegmentTree.obj
-  Release\QMatrix.obj
-  Release\QuadroTree.obj
-  Release\SegmentTree.obj
-  Release\SegmentTreeAddRange.obj
-  Release\SuffixArray.obj
-  Generating code
-  Finished generating code
-  DataStructures.vcxproj -> D:\DataStructures\Release\DataStructures.exe
-Done Building Project "D:\DataStructures\DataStructures\DataStructures.vcxproj" (Build target(s)).
+﻿Build started 28.07.2013 22:20:11.
+     1>Project "E:\Projects\DataStructures\DataStructures\DataStructures.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt BoasTree.cpp FenwickTree.cpp ImplicitTreapMin.cpp Long.cpp MillerRabinPrimeTestInt.cpp MillerRabinPrimeTestLong.cpp MinCostMaxFlow.cpp MinCostMaxFlowMultigraph.cpp min_cost_flow.cpp PersistentSegmentTree.cpp QMatrix.cpp QuadroTree.cpp SegmentTree.cpp SegmentTreeAddRange.cpp SuffixArray.cpp
+         BoasTree.cpp
+         FenwickTree.cpp
+         ImplicitTreapMin.cpp
+         Long.cpp
+     1>Long.cpp(30): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files\Microsoft Visual Studio 11.0\VC\include\stdio.h(311) : see declaration of 'sscanf'
+         MillerRabinPrimeTestInt.cpp
+         MillerRabinPrimeTestLong.cpp
+         MinCostMaxFlow.cpp
+         MinCostMaxFlowMultigraph.cpp
+         min_cost_flow.cpp
+         PersistentSegmentTree.cpp
+         QMatrix.cpp
+         QuadroTree.cpp
+         SegmentTree.cpp
+         SegmentTreeAddRange.cpp
+     1>SegmentTreeAddRange.cpp(120): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files\Microsoft Visual Studio 11.0\VC\include\stdio.h(290) : see declaration of 'scanf'
+     1>SegmentTreeAddRange.cpp(124): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files\Microsoft Visual Studio 11.0\VC\include\stdio.h(290) : see declaration of 'scanf'
+     1>SegmentTreeAddRange.cpp(135): warning C4018: '<' : signed/unsigned mismatch
+     1>SegmentTreeAddRange.cpp(150): warning C4018: '<' : signed/unsigned mismatch
+         SuffixArray.cpp
+       Link:
+         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\Projects\DataStructures\Release\DataStructures.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\Projects\DataStructures\Release\DataStructures.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\Projects\DataStructures\Release\DataStructures.lib" /MACHINE:X86 /SAFESEH Release\BoasTree.obj
+         Release\FenwickTree.obj
+         Release\ImplicitTreapMin.obj
+         Release\Long.obj
+         Release\MillerRabinPrimeTestInt.obj
+         Release\MillerRabinPrimeTestLong.obj
+         Release\MinCostMaxFlow.obj
+         Release\MinCostMaxFlowMultigraph.obj
+         Release\min_cost_flow.obj
+         Release\PersistentSegmentTree.obj
+         Release\QMatrix.obj
+         Release\QuadroTree.obj
+         Release\SegmentTree.obj
+         Release\SegmentTreeAddRange.obj
+         Release\SuffixArray.obj
+         Generating code
+         Finished generating code
+         DataStructures.vcxproj -> E:\Projects\DataStructures\Release\DataStructures.exe
+     1>Done Building Project "E:\Projects\DataStructures\DataStructures\DataStructures.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:11.86
+Time Elapsed 00:00:27.50

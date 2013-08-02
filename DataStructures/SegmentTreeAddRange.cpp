@@ -1,4 +1,4 @@
-#define TESTING 0
+#define TESTING 1
 
 /*
  * http://www.e-olimp.com/problems/2309
