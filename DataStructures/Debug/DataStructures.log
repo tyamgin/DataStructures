@@ -1,25 +1,30 @@
-﻿Build started 27.07.2013 10:28:55.
-Project "D:\DataStructures\DataStructures\DataStructures.vcxproj" on node 2 (Build target(s)).
-ClCompile:
-  C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt SegmentTree.cpp
-  SegmentTree.cpp
-Link:
-  C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\DataStructures\Debug\DataStructures.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\DataStructures\Debug\DataStructures.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\DataStructures\Debug\DataStructures.lib" /MACHINE:X86 Debug\BoasTree.obj
-  Debug\FenwickTree.obj
-  Debug\ImplicitTreapMin.obj
-  Debug\Long.obj
-  Debug\MillerRabinPrimeTestInt.obj
-  Debug\MillerRabinPrimeTestLong.obj
-  Debug\MinCostMaxFlow.obj
-  Debug\MinCostMaxFlowMultigraph.obj
-  Debug\min_cost_flow.obj
-  Debug\PersistentSegmentTree.obj
-  Debug\QMatrix.obj
-  Debug\SegmentTree.obj
-  Debug\SuffixArray.obj
-  DataStructures.vcxproj -> D:\DataStructures\Debug\DataStructures.exe
-Done Building Project "D:\DataStructures\DataStructures\DataStructures.vcxproj" (Build target(s)).
+﻿Build started 04.10.2013 8:36:08.
+     1>Project "D:\Projects\DataStructures\DataStructures\DataStructures.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt SimplexMethod.cpp
+         SimplexMethod.cpp
+     1>d:\projects\datastructures\datastructures\simplexmethod.cpp(64): warning C4018: '<' : signed/unsigned mismatch
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Projects\DataStructures\Debug\DataStructures.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Projects\DataStructures\Debug\DataStructures.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Projects\DataStructures\Debug\DataStructures.lib" /MACHINE:X86 Debug\BoasTree.obj
+         Debug\FenwickTree.obj
+         Debug\ImplicitTreapMin.obj
+         Debug\Long.obj
+         Debug\MillerRabinPrimeTestInt.obj
+         Debug\MillerRabinPrimeTestLong.obj
+         Debug\MinCostMaxFlow.obj
+         Debug\MinCostMaxFlowMultigraph.obj
+         Debug\min_cost_flow.obj
+         Debug\PersistentSegmentTree.obj
+         Debug\QMatrix.obj
+         Debug\QuadroTree.obj
+         Debug\SegmentTree.obj
+         Debug\SegmentTreeAddRange.obj
+         Debug\SimplexMethod.obj
+         Debug\SuffixArray.obj
+         Debug\SuffixAutomat.obj
+         DataStructures.vcxproj -> D:\Projects\DataStructures\Debug\DataStructures.exe
+     1>Done Building Project "D:\Projects\DataStructures\DataStructures\DataStructures.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:12.32
+Time Elapsed 00:00:02.66

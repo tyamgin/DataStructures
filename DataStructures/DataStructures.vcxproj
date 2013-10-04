@@ -90,6 +90,7 @@
     <ClCompile Include="QuadroTree.cpp" />
     <ClCompile Include="SegmentTree.cpp" />
     <ClCompile Include="SegmentTreeAddRange.cpp" />
+    <ClCompile Include="SimplexMethod.cpp" />
     <ClCompile Include="SuffixArray.cpp" />
     <ClCompile Include="SuffixAutomat.cpp" />
   </ItemGroup>

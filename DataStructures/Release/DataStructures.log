@@ -1,27 +1,10 @@
-﻿Build started 02.08.2013 21:00:58.
-     1>Project "E:\Projects\DataStructures\DataStructures\DataStructures.vcxproj" on node 2 (Rebuild target(s)).
+﻿Build started 03.10.2013 20:19:47.
+     1>Project "D:\Projects\DataStructures\DataStructures\DataStructures.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt BoasTree.cpp FenwickTree.cpp ImplicitTreapMin.cpp Long.cpp MillerRabinPrimeTestInt.cpp MillerRabinPrimeTestLong.cpp MinCostMaxFlow.cpp MinCostMaxFlowMultigraph.cpp min_cost_flow.cpp PersistentSegmentTree.cpp QMatrix.cpp QuadroTree.cpp SegmentTree.cpp SegmentTreeAddRange.cpp SuffixArray.cpp SuffixAutomat.cpp
-         BoasTree.cpp
-         FenwickTree.cpp
-         ImplicitTreapMin.cpp
-         Long.cpp
-     1>Long.cpp(30): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files\Microsoft Visual Studio 11.0\VC\include\stdio.h(311) : see declaration of 'sscanf'
-         MillerRabinPrimeTestInt.cpp
-         MillerRabinPrimeTestLong.cpp
-         MinCostMaxFlow.cpp
-         MinCostMaxFlowMultigraph.cpp
-         min_cost_flow.cpp
-         PersistentSegmentTree.cpp
-         QMatrix.cpp
-         QuadroTree.cpp
-         SegmentTree.cpp
-         SegmentTreeAddRange.cpp
-         SuffixArray.cpp
-         SuffixAutomat.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt SimplexMethod.cpp
+         SimplexMethod.cpp
        Link:
-         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\Projects\DataStructures\Release\DataStructures.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\Projects\DataStructures\Release\DataStructures.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\Projects\DataStructures\Release\DataStructures.lib" /MACHINE:X86 /SAFESEH Release\BoasTree.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Projects\DataStructures\Release\DataStructures.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Projects\DataStructures\Release\DataStructures.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Projects\DataStructures\Release\DataStructures.lib" /MACHINE:X86 /SAFESEH Release\BoasTree.obj
          Release\FenwickTree.obj
          Release\ImplicitTreapMin.obj
          Release\Long.obj
@@ -35,12 +18,15 @@
          Release\QuadroTree.obj
          Release\SegmentTree.obj
          Release\SegmentTreeAddRange.obj
+         Release\SimplexMethod.obj
          Release\SuffixArray.obj
          Release\SuffixAutomat.obj
-     1>MSVCRT.lib(crtexe.obj) : error LNK2001: unresolved external symbol _main
-     1>E:\Projects\DataStructures\Release\DataStructures.exe : fatal error LNK1120: 1 unresolved externals
-     1>Done Building Project "E:\Projects\DataStructures\DataStructures\DataStructures.vcxproj" (Rebuild target(s)) -- FAILED.
+         Generating code
+     1>d:\projects\datastructures\datastructures\simplexmethod.cpp(113): warning C4715: 'SimplexMethod::Do' : not all control paths return a value
+         Finished generating code
+         DataStructures.vcxproj -> D:\Projects\DataStructures\Release\DataStructures.exe
+     1>Done Building Project "D:\Projects\DataStructures\DataStructures\DataStructures.vcxproj" (Build target(s)).
 
-Build FAILED.
+Build succeeded.
 
-Time Elapsed 00:00:16.85
+Time Elapsed 00:00:03.43
