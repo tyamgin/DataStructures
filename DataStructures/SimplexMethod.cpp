@@ -1,6 +1,6 @@
 // http://acm.timus.ru/problem.aspx?space=1&num=1417
 
-#define TESTING 1
+#define TESTING 0
 
 #pragma comment(linker, "/STACK:500000000") 
 #include <functional>

@@ -77,7 +77,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BoasTree.cpp" />
+    <ClCompile Include="ConvexHullDivideAndConquer.cpp" />
+    <ClCompile Include="ConvexHullGraham.cpp" />
     <ClCompile Include="FenwickTree.cpp" />
+    <ClCompile Include="HalfplaneIntersection.cpp" />
     <ClCompile Include="ImplicitTreapMin.cpp" />
     <ClCompile Include="Long.cpp" />
     <ClCompile Include="MillerRabinPrimeTestInt.cpp" />
