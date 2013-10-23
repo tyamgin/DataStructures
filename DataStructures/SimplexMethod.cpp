@@ -28,6 +28,7 @@ using namespace std;
 
 // http://abc.vvsu.ru/Books/ebooks_iskt/%DD%EB%E5%EA%F2%F0%EE%ED%ED%FB%E5%F3%F7%E5%E1%ED%E8%EA%E8/%C8%F1%F1%EB%E5%E4%EE%E2%E0%ED%E8%E5%20%EE%EF%E5%F0%E0%F6%E8%E9/fmi.asf.ru/vavilov/sm6.htm
 
+#define M 1e8
 #define MAXN 400
 struct SimplexTable {
 	double a[MAXN][MAXN], diff[MAXN];
@@ -49,6 +50,9 @@ struct SimplexTable {
 };
 
 struct SimplexMethod : SimplexTable {
+	static enum {INFINITY_SOLUTIONS, NO_SOLUTIONS, OK};
+	SimplexTable to;
+
 	int getDirectRow(int L) {
 		double min = 1e100;
 		int I = -1;
@@ -58,20 +62,28 @@ struct SimplexMethod : SimplexTable {
 		return I;
 	}
 
-	int Do(vector<vector<double> > matrix, vector<double> c, vector<double> &result) {		
+	int Do(vector<vector<double> > matrix, vector<double> c, vector<double> &result) {
+		result.clear();
+		memset(a, 0, sizeof(a)); // TODO
+		memset(basis, 0, sizeof(basis));
+		memset(diff, 0, sizeof(diff));
 		rows = matrix.size(); 
 		columns = matrix[0].size() - 1;
+		for(int i = 0; i < rows; i++)
+			if (matrix[i].back() < 0)
+				for(int j = 0; j <= columns; j++)
+					matrix[i][j] *= -1;
 		for(int i = 0; i < rows; i++) {
 			basis[i] = columns + i;
-			c.push_back(1e8);
+			c.push_back(M);
 		}
 		columns += rows;
 		for(int i = 0; i < rows; i++) {
-			int row = basis[i];
-			fill(a[row], a[row] + columns, 0.0);
-			copy(matrix[i].begin(), matrix[i].end() - 1, a[row]);
-			a[row][row] = 1;
-			a[row][columns] = matrix[i].back();
+			double *row = a[basis[i]];
+			fill(row, row + columns, 0.0);
+			copy(matrix[i].begin(), matrix[i].end() - 1, row);
+			row[basis[i]] = 1;
+			row[columns] = matrix[i].back();
 		}
 		for(int j = 0; j < columns; j++) {
 			double sum = 0;
@@ -79,26 +91,24 @@ struct SimplexMethod : SimplexTable {
 				sum += c[basis[i]] * a[basis[i]][j];
 			diff[j] = sum - c[j];
 		}
-		static SimplexTable to = *this;
+		to = *this;
 		while(1) {
 			int L = max_element(diff, diff + columns) - diff;
 			if (diff[L] < eps) {
-				result.clear();
-				for(int i = 0; i < columns; i++)
+				for(int i = 0; i < columns - rows; i++)
 					result.push_back(X(i));
-				return 1;
+				return OK;
 			}
 			int whereI = getDirectRow(L);
 			if (whereI < 0)
-				return INF;
+				return INFINITY_SOLUTIONS;
 			int I = basis[whereI];
 			double teta = X(I) / X(I, L);
-			to(L, columns) = teta;
+			to(L) = teta;
 			for(int j = 0; j < columns; j++)
 				to(L, j) = X(I, j) / X(I, L);
-			for(int row = 0; row < rows; row++) {
-				if (row != whereI) {
-					int i = basis[row]; 
+			for(int i = 0; i < columns; i++) { 
+				if (i != L) {
 					to(i, columns) = X(i) - teta * X(i, L);
 					for(int j = 0; j < columns; j++)
 						to(i, j) = X(i, j) - X(I, j) / X(I, L) * X(i, L);
@@ -113,6 +123,7 @@ struct SimplexMethod : SimplexTable {
 		}
 	}
 };
+
 
 #if TESTING
 
