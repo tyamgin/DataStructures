@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -10,6 +10,31 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Geometry\ConvexHullDivideAndConquer.cpp" />
+    <ClCompile Include="Geometry\ConvexHullGraham.cpp" />
+    <ClCompile Include="Geometry\HalfplaneIntersection.cpp" />
+    <ClCompile Include="Graphs\MinCostMaxFlow.cpp" />
+    <ClCompile Include="Graphs\MinCostMaxFlowMultigraph.cpp" />
+    <ClCompile Include="Graphs\min_cost_flow.cpp" />
+    <ClCompile Include="Graphs\TutteMatrix.cpp" />
+    <ClCompile Include="Numbers\InverseRange.cpp" />
+    <ClCompile Include="Numbers\Long.cpp" />
+    <ClCompile Include="Numbers\MillerRabinPrimeTestInt.cpp" />
+    <ClCompile Include="Numbers\MillerRabinPrimeTestLong.cpp" />
+    <ClCompile Include="Strings\Manaker.cpp" />
+    <ClCompile Include="Strings\SuffixArray.cpp" />
+    <ClCompile Include="Strings\SuffixAutomat.cpp" />
+    <ClCompile Include="Structures\BoasTree.cpp" />
+    <ClCompile Include="Structures\DequeMin.cpp" />
+    <ClCompile Include="Structures\FenwickTree.cpp" />
+    <ClCompile Include="Structures\ImplicitTreapMin.cpp" />
+    <ClCompile Include="Structures\PersistentSegmentTree.cpp" />
+    <ClCompile Include="Structures\QuadTree.cpp" />
+    <ClCompile Include="Structures\SegmentTree.cpp" />
+    <ClCompile Include="Structures\SegmentTreeAddRange.cpp" />
+    <ClCompile Include="Structures\Treap.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{4155B9DB-2F76-4A01-9966-452D8CF8EA1B}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
@@ -19,13 +44,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v120</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v120</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -75,28 +100,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="BoasTree.cpp" />
-    <ClCompile Include="ConvexHullDivideAndConquer.cpp" />
-    <ClCompile Include="ConvexHullGraham.cpp" />
-    <ClCompile Include="FenwickTree.cpp" />
-    <ClCompile Include="HalfplaneIntersection.cpp" />
-    <ClCompile Include="ImplicitTreapMin.cpp" />
-    <ClCompile Include="Long.cpp" />
-    <ClCompile Include="MillerRabinPrimeTestInt.cpp" />
-    <ClCompile Include="MillerRabinPrimeTestLong.cpp" />
-    <ClCompile Include="MinCostMaxFlow.cpp" />
-    <ClCompile Include="MinCostMaxFlowMultigraph.cpp" />
-    <ClCompile Include="min_cost_flow.cpp" />
-    <ClCompile Include="PersistentSegmentTree.cpp" />
-    <ClCompile Include="QMatrix.cpp" />
-    <ClCompile Include="QuadroTree.cpp" />
-    <ClCompile Include="SegmentTree.cpp" />
-    <ClCompile Include="SegmentTreeAddRange.cpp" />
-    <ClCompile Include="SimplexMethod.cpp" />
-    <ClCompile Include="SuffixArray.cpp" />
-    <ClCompile Include="SuffixAutomat.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

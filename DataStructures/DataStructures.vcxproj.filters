@@ -16,70 +16,88 @@
     <Filter Include="Source Files\Geometry">
       <UniqueIdentifier>{ef386038-b57b-4555-a64d-e280ef556e9e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Graphs">
+      <UniqueIdentifier>{dc5fd20d-e2b0-4e54-b257-ee681a857cc4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Structures">
+      <UniqueIdentifier>{446fafd7-3278-4909-8ae0-45752f6cc9c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Strings">
+      <UniqueIdentifier>{cc3994be-d0f1-496b-8889-0b6fb85e9300}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Numbers">
+      <UniqueIdentifier>{d96a84f0-a85c-4360-a0be-1743c916157c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ImplicitTreapMin.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="BoasTree.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="QMatrix.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="min_cost_flow.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MinCostMaxFlow.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PersistentSegmentTree.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MinCostMaxFlowMultigraph.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SuffixArray.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MillerRabinPrimeTestLong.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MillerRabinPrimeTestInt.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MillerRabinPrimeTestInt.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Long.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="FenwickTree.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="QuadroTree.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SegmentTreeAddRange.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SegmentTree.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SuffixAutomat.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SimplexMethod.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ConvexHullDivideAndConquer.cpp">
+    <ClCompile Include="Geometry\ConvexHullDivideAndConquer.cpp">
       <Filter>Source Files\Geometry</Filter>
     </ClCompile>
-    <ClCompile Include="ConvexHullGraham.cpp">
+    <ClCompile Include="Geometry\ConvexHullGraham.cpp">
       <Filter>Source Files\Geometry</Filter>
     </ClCompile>
-    <ClCompile Include="HalfplaneIntersection.cpp">
+    <ClCompile Include="Geometry\HalfplaneIntersection.cpp">
       <Filter>Source Files\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphs\min_cost_flow.cpp">
+      <Filter>Source Files\Graphs</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphs\MinCostMaxFlow.cpp">
+      <Filter>Source Files\Graphs</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphs\MinCostMaxFlowMultigraph.cpp">
+      <Filter>Source Files\Graphs</Filter>
+    </ClCompile>
+    <ClCompile Include="Numbers\Long.cpp">
+      <Filter>Source Files\Numbers</Filter>
+    </ClCompile>
+    <ClCompile Include="Numbers\MillerRabinPrimeTestInt.cpp">
+      <Filter>Source Files\Numbers</Filter>
+    </ClCompile>
+    <ClCompile Include="Numbers\MillerRabinPrimeTestLong.cpp">
+      <Filter>Source Files\Numbers</Filter>
+    </ClCompile>
+    <ClCompile Include="Strings\Manaker.cpp">
+      <Filter>Source Files\Strings</Filter>
+    </ClCompile>
+    <ClCompile Include="Strings\SuffixArray.cpp">
+      <Filter>Source Files\Strings</Filter>
+    </ClCompile>
+    <ClCompile Include="Strings\SuffixAutomat.cpp">
+      <Filter>Source Files\Strings</Filter>
+    </ClCompile>
+    <ClCompile Include="Structures\BoasTree.cpp">
+      <Filter>Source Files\Structures</Filter>
+    </ClCompile>
+    <ClCompile Include="Structures\FenwickTree.cpp">
+      <Filter>Source Files\Structures</Filter>
+    </ClCompile>
+    <ClCompile Include="Structures\ImplicitTreapMin.cpp">
+      <Filter>Source Files\Structures</Filter>
+    </ClCompile>
+    <ClCompile Include="Structures\PersistentSegmentTree.cpp">
+      <Filter>Source Files\Structures</Filter>
+    </ClCompile>
+    <ClCompile Include="Structures\SegmentTree.cpp">
+      <Filter>Source Files\Structures</Filter>
+    </ClCompile>
+    <ClCompile Include="Structures\SegmentTreeAddRange.cpp">
+      <Filter>Source Files\Structures</Filter>
+    </ClCompile>
+    <ClCompile Include="Structures\Treap.cpp">
+      <Filter>Source Files\Structures</Filter>
+    </ClCompile>
+    <ClCompile Include="Numbers\InverseRange.cpp">
+      <Filter>Source Files\Numbers</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphs\TutteMatrix.cpp">
+      <Filter>Source Files\Graphs</Filter>
+    </ClCompile>
+    <ClCompile Include="Structures\DequeMin.cpp">
+      <Filter>Source Files\Structures</Filter>
+    </ClCompile>
+    <ClCompile Include="Structures\QuadTree.cpp">
+      <Filter>Source Files\Structures</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

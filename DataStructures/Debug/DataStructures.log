@@ -1,40 +1,36 @@
-﻿Build started 23.10.2013 22:01:13.
-     1>Project "D:\Projects\DataStructures\DataStructures\DataStructures.vcxproj" on node 2 (Build target(s)).
+﻿Сборка начата 21.01.2014 17:21:10.
+     1>Проект "D:\Projects\DataStructures\DataStructures\DataStructures.vcxproj" в узле 2 (целевые объекты Build).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt SimplexMethod.cpp
-         SimplexMethod.cpp
-     1>c:\program files (x86)\microsoft visual studio 11.0\vc\include\xutility(2176): warning C4996: 'std::_Copy_impl': Function call with parameters that may be unsafe - this call relies on the caller to check that the passed values are correct. To disable this warning, use -D_SCL_SECURE_NO_WARNINGS. See documentation on how to use Visual C++ 'Checked Iterators'
-                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\xutility(2157) : see declaration of 'std::_Copy_impl'
-                 d:\projects\datastructures\datastructures\simplexmethod.cpp(84) : see reference to function template instantiation '_OutIt std::copy<std::_Vector_iterator<_Myvec>,double*>(_InIt,_InIt,_OutIt)' being compiled
-                 with
-                 [
-                     _OutIt=double *,
-                     _Myvec=std::_Vector_val<std::_Simple_types<double>>,
-                     _InIt=std::_Vector_iterator<std::_Vector_val<std::_Simple_types<double>>>
-                 ]
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Graphs\TutteMatrix.cpp Numbers\InverseRange.cpp
+         InverseRange.cpp
+         TutteMatrix.cpp
+         Создание кода...
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Projects\DataStructures\Debug\DataStructures.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Projects\DataStructures\Debug\DataStructures.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Projects\DataStructures\Debug\DataStructures.lib" /MACHINE:X86 Debug\BoasTree.obj
-         Debug\ConvexHullDivideAndConquer.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Projects\DataStructures\Debug\DataStructures.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Projects\DataStructures\Debug\DataStructures.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Projects\DataStructures\Debug\DataStructures.lib" /MACHINE:X86 Debug\ConvexHullDivideAndConquer.obj
          Debug\ConvexHullGraham.obj
-         Debug\FenwickTree.obj
-         Debug\ImplicitTreapMin.obj
-         Debug\Long.obj
-         Debug\MillerRabinPrimeTestInt.obj
-         Debug\MillerRabinPrimeTestLong.obj
+         Debug\HalfplaneIntersection.obj
          Debug\MinCostMaxFlow.obj
          Debug\MinCostMaxFlowMultigraph.obj
          Debug\min_cost_flow.obj
+         Debug\TutteMatrix.obj
+         Debug\InverseRange.obj
+         Debug\Long.obj
+         Debug\MillerRabinPrimeTestInt.obj
+         Debug\MillerRabinPrimeTestLong.obj
+         Debug\Manaker.obj
+         Debug\SuffixArray.obj
+         Debug\SuffixAutomat.obj
+         Debug\BoasTree.obj
+         Debug\FenwickTree.obj
+         Debug\ImplicitTreapMin.obj
          Debug\PersistentSegmentTree.obj
-         Debug\QMatrix.obj
          Debug\QuadroTree.obj
          Debug\SegmentTree.obj
          Debug\SegmentTreeAddRange.obj
-         Debug\SimplexMethod.obj
-         Debug\SuffixArray.obj
-         Debug\SuffixAutomat.obj
+         Debug\Treap.obj
          DataStructures.vcxproj -> D:\Projects\DataStructures\Debug\DataStructures.exe
-     1>Done Building Project "D:\Projects\DataStructures\DataStructures\DataStructures.vcxproj" (Build target(s)).
+     1>Сборка проекта "D:\Projects\DataStructures\DataStructures\DataStructures.vcxproj" завершена (целевые объекты Build).
 
-Build succeeded.
+Сборка успешно завершена.
 
-Time Elapsed 00:00:02.56
+Затраченное время: 00:00:02.36
