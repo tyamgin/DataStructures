@@ -18,6 +18,7 @@
     <ClCompile Include="Graphs\MinCostMaxFlowMultigraph.cpp" />
     <ClCompile Include="Graphs\min_cost_flow.cpp" />
     <ClCompile Include="Graphs\TutteMatrix.cpp" />
+    <ClCompile Include="Numbers\Fraction.cpp" />
     <ClCompile Include="Numbers\InverseRange.cpp" />
     <ClCompile Include="Numbers\Long.cpp" />
     <ClCompile Include="Numbers\MillerRabinPrimeTestInt.cpp" />
