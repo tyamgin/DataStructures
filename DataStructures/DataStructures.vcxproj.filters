@@ -102,5 +102,8 @@
     <ClCompile Include="Numbers\Fraction.cpp">
       <Filter>Source Files\Numbers</Filter>
     </ClCompile>
+    <ClCompile Include="Structures\SegmentTreeAddProgression.cpp">
+      <Filter>Source Files\Structures</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

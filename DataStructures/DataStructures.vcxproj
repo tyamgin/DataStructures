@@ -33,6 +33,7 @@
     <ClCompile Include="Structures\PersistentSegmentTree.cpp" />
     <ClCompile Include="Structures\QuadTree.cpp" />
     <ClCompile Include="Structures\SegmentTree.cpp" />
+    <ClCompile Include="Structures\SegmentTreeAddProgression.cpp" />
     <ClCompile Include="Structures\SegmentTreeAddRange.cpp" />
     <ClCompile Include="Structures\Treap.cpp" />
   </ItemGroup>
