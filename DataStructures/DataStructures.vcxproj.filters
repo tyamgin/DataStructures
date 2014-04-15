@@ -106,4 +106,9 @@
       <Filter>Source Files\Structures</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="Geometry\Point3D.cpp">
+      <Filter>Source Files\Geometry</Filter>
+    </Text>
+  </ItemGroup>
 </Project>

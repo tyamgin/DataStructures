@@ -37,6 +37,9 @@
     <ClCompile Include="Structures\SegmentTreeAddRange.cpp" />
     <ClCompile Include="Structures\Treap.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="Geometry\Point3D.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{4155B9DB-2F76-4A01-9966-452D8CF8EA1B}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
