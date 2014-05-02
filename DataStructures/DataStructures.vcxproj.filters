@@ -105,6 +105,9 @@
     <ClCompile Include="Structures\SegmentTreeAddProgression.cpp">
       <Filter>Source Files\Structures</Filter>
     </ClCompile>
+    <ClCompile Include="Strings\Kasai.cpp">
+      <Filter>Source Files\Strings</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Geometry\Point3D.cpp">
