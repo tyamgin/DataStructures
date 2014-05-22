@@ -1,3 +1,4 @@
+// http://ru.wikipedia.org/wiki/%CE%A1-%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%9F%D0%BE%D0%BB%D0%BB%D0%B0%D1%80%D0%B4%D0%B0
 // http://acm.timus.ru/problem.aspx?space=1&num=1854
 
 #if 0
