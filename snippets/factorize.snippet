@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>factorize</Title>
+      <Shortcut>factorize</Shortcut>
+      <Description>Code snippet for factorize</Description>
+      <Author>Tyamgin</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+        <SnippetType>SurroundsWith</SnippetType>
+      </SnippetTypes>
+    </Header>
+    
+    
+    <Snippet>
+      <Declarations>
+      </Declarations>
+      <Code Language="cpp">
+          <![CDATA[template<typename Type> vector<pair<Type, int> > factorize(Type n) {
+	vector<pair<Type, int> > result;
+	for (Type i = 2; i*i <= n; i++) {
+		if (n % i == 0) {
+			result.push_back(make_pair(i, 1));
+			for (n /= i; n % i == 0; n /= i)
+				result.back().second++;
+		}
+	}
+	if (n > 1)
+		result.push_back(make_pair(n, 1));
+	return result;
+}]]>
+      </Code>
+    </Snippet>
+
+  </CodeSnippet>
+</CodeSnippets>

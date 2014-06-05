@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>isPalindrom</Title>
+      <Shortcut>isPalindrom</Shortcut>
+      <Description>Code snippet for isPalindrom</Description>
+      <Author>Tyamgin</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+        <SnippetType>SurroundsWith</SnippetType>
+      </SnippetTypes>
+    </Header>
+    
+    
+    <Snippet>
+      <Declarations>
+      </Declarations>
+      <Code Language="cpp">
+          <![CDATA[template<typename Iterator> bool isPalindrom(Iterator begin, Iterator end) {
+	if (begin >= end)
+		return true;
+	for (end--; begin < end; begin++, end--)
+		if (*begin != *end)
+			return false;
+	return true;
+}]]>
+      </Code>
+    </Snippet>
+
+  </CodeSnippet>
+</CodeSnippets>
