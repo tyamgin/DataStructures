@@ -24,6 +24,7 @@
     <ClCompile Include="Numbers\MillerRabinPrimeTestInt.cpp" />
     <ClCompile Include="Numbers\MillerRabinPrimeTestLong.cpp" />
     <ClCompile Include="Numbers\PollardRho.cpp" />
+    <ClCompile Include="Numbers\Random.cpp" />
     <ClCompile Include="Strings\Kasai.cpp" />
     <ClCompile Include="Strings\Manaker.cpp" />
     <ClCompile Include="Strings\SuffixArray.cpp" />

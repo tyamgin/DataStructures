@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>random</Title>
+      <Shortcut>random</Shortcut>
+      <Description>Code snippet for random</Description>
+      <Author>Tyamgin</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+        <SnippetType>SurroundsWith</SnippetType>
+      </SnippetTypes>
+    </Header>
+    
+    
+    <Snippet>
+      <Declarations>
+      </Declarations>
+      <Code Language="cpp">
+          <![CDATA[struct Random
+{
+	static unsigned getUnsigned()
+	{
+		return (unsigned)rand() * RAND_MAX + rand();
+	}
+
+	static double getDouble()
+	{
+		return (double)getUnsigned() / RAND_MAX / RAND_MAX;
+	}
+
+	static double getDouble(double from, double to)
+	{
+		return getDouble() * (to - from) + from;
+	}
+
+	static double getGaussian(double center = 0, double variance = 1)
+	{
+		double sum = 0;
+		for (int i = 0; i < 48; i++)
+			sum += getDouble();
+		return (sum / 2 - 12) * variance + center;
+	}
+};]]>
+      </Code>
+    </Snippet>
+
+  </CodeSnippet>
+</CodeSnippets>

@@ -111,6 +111,9 @@
     <ClCompile Include="Numbers\PollardRho.cpp">
       <Filter>Source Files\Numbers</Filter>
     </ClCompile>
+    <ClCompile Include="Numbers\Random.cpp">
+      <Filter>Source Files\Numbers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Geometry\Point3D.cpp">
