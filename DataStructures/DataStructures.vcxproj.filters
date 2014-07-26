@@ -36,9 +36,6 @@
     <ClCompile Include="Geometry\ConvexHullGraham.cpp">
       <Filter>Source Files\Geometry</Filter>
     </ClCompile>
-    <ClCompile Include="Geometry\HalfplaneIntersection.cpp">
-      <Filter>Source Files\Geometry</Filter>
-    </ClCompile>
     <ClCompile Include="Graphs\min_cost_flow.cpp">
       <Filter>Source Files\Graphs</Filter>
     </ClCompile>
@@ -114,10 +111,8 @@
     <ClCompile Include="Numbers\Random.cpp">
       <Filter>Source Files\Numbers</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="Geometry\Point3D.cpp">
+    <ClCompile Include="Geometry\Geometry.cpp">
       <Filter>Source Files\Geometry</Filter>
-    </Text>
+    </ClCompile>
   </ItemGroup>
 </Project>
