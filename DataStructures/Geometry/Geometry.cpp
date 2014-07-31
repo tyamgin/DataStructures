@@ -26,6 +26,7 @@ using namespace std;
 typedef pair<int, int> pii;
 
 #if 0
+#pragma region Geom
 
 const double Pi = acos(-1.0);
 
@@ -101,6 +102,22 @@ template<typename Type> struct Point2D {
 		y -= point.y;
 	}
 
+	Point2D operator -(const Point2D &point) const {
+		return Point2D(x - point.x, y - point.y);
+	}
+
+	Point2D operator +(const Point2D &point) const {
+		return Point2D(x + point.x, y + point.y);
+	}
+
+	Point2D operator *(double by) const {
+		return Point2D(x * by, y * by);
+	}
+
+	Point2D operator /(double by) const {
+		return Point2D(x / by, y / by);
+	}
+
 	double length() {
 		return sqrt(x * x + y * y + 0.0);
 	}
@@ -109,6 +126,10 @@ template<typename Type> struct Point2D {
 		double len = length();
 		x /= len;
 		y /= len;
+	}
+
+	Point2D normalized() {
+		return *this / length();
 	}
 
 	double getDistanceToLine(const Point2D &a, const Point2D &b) {
@@ -146,15 +167,15 @@ template<typename Type> struct Point2D {
 };
 
 template<typename Type> struct Point3D {
-	
+
 	Type x, y, z;
 
 	Point3D(Type x = 0, Type y = 0, Type z = 0) : x(x), y(y), z(z) {
-		
+
 	}
 
 	Point3D<double> rotated(vector<vector<double> > a) {
-		return {
+		return{
 			x * a[0][0] + y * a[1][0] + z * a[2][0],
 			x * a[0][1] + y * a[1][1] + z * a[2][1],
 			x * a[0][2] + y * a[1][2] + z * a[2][2]
@@ -162,26 +183,26 @@ template<typename Type> struct Point3D {
 	}
 
 	Point3D<double> rotatedX(double angle) {
-		return rotated({ 
-			{ 1, 0, 0 }, 
-			{ 0, cos(angle), -sin(angle) }, 
-			{ 0, sin(angle), cos(angle) } 
+		return rotated({
+			{ 1, 0, 0 },
+			{ 0, cos(angle), -sin(angle) },
+			{ 0, sin(angle), cos(angle) }
 		});
 	}
 
 	Point3D<double> rotatedY(double angle) {
-		return rotated({ 
+		return rotated({
 			{ cos(angle), 0, sin(angle) },
 			{ 0, 1, 0 },
-			{ -sin(angle), 0, cos(angle) } 
+			{ -sin(angle), 0, cos(angle) }
 		});
 	}
 
 	Point3D<double> rotatedZ(double angle) {
-		return rotated({ 
+		return rotated({
 			{ cos(angle), -sin(angle), 0 },
 			{ sin(angle), cos(angle), 0 },
-			{ 0, 0, 1 } 
+			{ 0, 0, 1 }
 		});
 	}
 
@@ -202,7 +223,7 @@ template<typename Type> struct Point3D {
 	}
 
 	friend ostream &operator <<(ostream &out, Point3D &p) {
-		return out << p.x << " " << p.y << " "<< p.z;
+		return out << p.x << " " << p.y << " " << p.z;
 	}
 
 	Point3D operator -(Point3D p) const {
@@ -333,6 +354,5 @@ struct ConvexPolygon : public Polygon<double> {
 	}
 };
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+#pragma endregion
 #endif
