@@ -114,5 +114,8 @@
     <ClCompile Include="Geometry\Geometry.cpp">
       <Filter>Source Files\Geometry</Filter>
     </ClCompile>
+    <ClCompile Include="Structures\DoubleSet.cpp">
+      <Filter>Source Files\Structures</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

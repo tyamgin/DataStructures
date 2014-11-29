@@ -31,6 +31,7 @@
     <ClCompile Include="Strings\SuffixAutomat.cpp" />
     <ClCompile Include="Structures\BoasTree.cpp" />
     <ClCompile Include="Structures\DequeMin.cpp" />
+    <ClCompile Include="Structures\DoubleSet.cpp" />
     <ClCompile Include="Structures\FenwickTree.cpp" />
     <ClCompile Include="Structures\ImplicitTreapMin.cpp" />
     <ClCompile Include="Structures\PersistentSegmentTree.cpp" />
