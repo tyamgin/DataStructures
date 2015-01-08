@@ -1,10 +1,9 @@
-﻿Сборка начата 29.11.2014 15:41:43.
+﻿Сборка начата 08.01.2015 18:35:32.
      1>Проект "D:\Projects\DataStructures\DataStructures\DataStructures.vcxproj" в узле 2 (целевые объекты Build).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Geometry\Geometry.cpp Numbers\Random.cpp Structures\SegmentTree.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Structures\DoubleSet.cpp Structures\SegmentTree.cpp
          SegmentTree.cpp
-         Random.cpp
-         Geometry.cpp
+         DoubleSet.cpp
          Создание кода...
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Projects\DataStructures\Debug\DataStructures.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Projects\DataStructures\Debug\DataStructures.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Projects\DataStructures\Debug\DataStructures.lib" /MACHINE:X86 Debug\ConvexHullDivideAndConquer.obj
@@ -27,6 +26,7 @@
          Debug\SuffixAutomat.obj
          Debug\BoasTree.obj
          Debug\DequeMin.obj
+         Debug\DoubleSet.obj
          Debug\FenwickTree.obj
          Debug\ImplicitTreapMin.obj
          Debug\PersistentSegmentTree.obj
@@ -35,11 +35,10 @@
          Debug\SegmentTreeAddProgression.obj
          Debug\SegmentTreeAddRange.obj
          Debug\Treap.obj
-         LINK : не найден или не выполнена сборка D:\Projects\DataStructures\Debug\DataStructures.exe при последней инкрементной компоновке; выполняется полная компоновка
      1>MSVCRTD.lib(crtexe.obj) : error LNK2019: ссылка на неразрешенный внешний символ _main в функции ___tmainCRTStartup
      1>D:\Projects\DataStructures\Debug\DataStructures.exe : fatal error LNK1120: неразрешенных внешних элементов: 1
      1>Сборка проекта "D:\Projects\DataStructures\DataStructures\DataStructures.vcxproj" завершена (целевые объекты Build) с ошибкой.
 
 Ошибка сборки.
 
-Затраченное время: 00:00:03.40
+Затраченное время: 00:00:04.42

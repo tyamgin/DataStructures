@@ -33,14 +33,28 @@ protected:
 	MainOperator Operator;
 	AddOperator addOperator;
 
+	void _construct(int size, Type defaultValue, Type value)
+	{
+		ppow = size;
+		while (ppow & (ppow - 1))
+			ppow++;
+		this->defaultValue = defaultValue;
+		t.resize(ppow * 2);
+		for (int i = 0; i < ppow; i++)
+			t[i + ppow] = i < size ? value : defaultValue;
+		for (int i = ppow - 1; i > 0; i--)
+			t[i] = Operator(t[i * 2], t[i * 2 + 1]);
+	}
+
 public:
 	SegmentTree(int size, Type defaultValue)
 	{
-		while (size & (size - 1))
-			size++;
-		this->ppow = size;
-		this->defaultValue = defaultValue;
-		t.assign(ppow * 2, defaultValue);
+		_construct(size, defaultValue, defaultValue);
+	}
+
+	SegmentTree(int size, Type defaultValue, Type value)
+	{
+		_construct(size, defaultValue, value);
 	}
 
 	template<typename Iterator>
