@@ -25,8 +25,8 @@
 using namespace std;
 typedef pair<int, int> pii;
 
-#if 0
-#pragma region Geom
+#if 1
+#pragma region geometry
 
 const double Pi = acos(-1.0);
 
@@ -42,6 +42,10 @@ template<typename Type> int compareTo(Type a, Type b) {
 	if (equal(a, b))
 		return 0;
 	return a < b ? -1 : 1;
+}
+
+template<typename Type> int sign(Type x) {
+	return compareTo(x, (Type)(0));
 }
 
 template<typename Type> struct Point2D;
@@ -91,6 +95,10 @@ template<typename Type> struct Point2D {
 
 	double getDistanceTo(const Point2D &to) const {
 		return sqrt((double)getDistanceInSquareTo(to));
+	}
+
+	Type operator *(const Point2D &to) const {
+		return x * to.x + y * to.y;
 	}
 
 	Point2D operator -() const {
@@ -280,7 +288,7 @@ Point intersect(const Point &a, const Point &b, const Point &c, const Point &d) 
 	return Point(determinant(-C1, B1, -C2, B2) / D, determinant(A1, -C1, A2, -C2) / D);
 }
 
-template<typename Type> struct Polygon : vector<Point2D<Type> > {
+template<typename Type> struct Polygon : public vector<Point2D<Type> > {
 
 	double getDoubleSquare() {
 		int i, n = (int)this->size();
@@ -300,29 +308,55 @@ template<typename Type> struct Polygon : vector<Point2D<Type> > {
 	}
 };
 
-struct ConvexPolygon : public Polygon<double> {
-	bool inPolygon(const Point &p) {
-		int n = (int)size(), i;
-		vector<int> v(n);
-		for (i = 0; i < n; i++) {
-			double vc = vectorProduct(at(i), at((i + 1) % n), p);
-			v[i] = equal(vc, 0.0) ? 0 : (vc < 0 ? -1 : 1);
+template<typename Type> struct ConvexPolygon : public Polygon<Type> {
+
+	void makeCCWDirection() {
+		bool allNegative = true;
+		int n = this->size();
+
+		for (int i = 0; i < n; i++)
+			allNegative &= sign(vectorProduct(this->at(i), this->at((i + 1) % n), this->at((i + 2) % n))) > 0;
+		if (!allNegative)
+			reverse(this->begin(), this->end());
+	}
+
+	bool inPolygonFast(const Point2D<Type> &p) {
+		int L = 1, R = (int)this->size() - 2, pos = -1;
+		while (L <= R) {
+			int c = (L + R) / 2;
+			if (sign(vectorProduct(this->at(0), this->at(c), p)) >= 0)
+				pos = c, L = c + 1;
+			else
+				R = c - 1;
 		}
+		if (pos == -1)
+			return false;
+		return sign(vectorProduct(this->at(0), this->at(pos + 1), p)) <= 0
+			&& sign(vectorProduct(this->at(pos), this->at(pos + 1), p)) >= 0;
+	}
+
+	bool inPolygon(const Point2D<Type> &p) {
+		int n = (int)this->size(), i;
+		vector<char> v(n);
+		for (i = 0; i < n; i++)
+			v[i] = sign(vectorProduct(this->at(i), this->at((i + 1) % n), p));
 		return count(v.begin(), v.end(), -1) == 0 || count(v.begin(), v.end(), 1) == 0;
 	}
 
-	double getDistanceTo(Point p) {
+	double getDistanceTo(Point2D<Type> p) {
 		if (inPolygon(p))
 			return 0.0;
-		double minDistance = p.getDistanceToSegment(at(0), back());
-		for (int i = 1; i < (int)size(); i++)
-			minDistance = min(minDistance, p.getDistanceToSegment(at(i), at(i - 1)));
+		double minDistance = p.getDistanceToSegment(this->at(0), this->back());
+		for (int i = 1; i < (int)this->size(); i++)
+			minDistance = min(minDistance, p.getDistanceToSegment(this->at(i), this->at(i - 1)));
 		return minDistance;
 	}
 
-	ConvexPolygon cut(const Point &a, const Point &b) {
+	ConvexPolygon<double> cut(const Point &a, const Point &b) {
 		vector<int> idx;
-		ConvexPolygon res(*this);
+		ConvexPolygon<double> res;
+		for (int i = 0; i < (int)this->size(); i++)
+			res.push_back(Point(this->at(i).x, this->at(i).y));
 
 		for (int i = 0; i < (int)res.size(); i++) {
 			Point &cur = res[i];
@@ -334,8 +368,8 @@ struct ConvexPolygon : public Polygon<double> {
 				res.insert(res.begin() + (i + 1) % res.size(), inter);
 			}
 		}
-		for (int i = 0; i < (int)size(); i++) {
-			if (isOnSegment(at(i), a, b))
+		for (int i = 0; i < (int)this->size(); i++) {
+			if (isOnSegment(this->at(i), a, b))
 				idx.push_back(i);
 		}
 
@@ -346,13 +380,35 @@ struct ConvexPolygon : public Polygon<double> {
 		return res;
 	}
 
-	ConvexPolygon intersectWith(ConvexPolygon &p) {
-		ConvexPolygon res(p);
-		for (int i = 0; i < (int)size(); i++)
-			res = res.cut(at(i), at((i + 1) % size()));
+	ConvexPolygon<double> intersectWith(ConvexPolygon<double> &p) {
+		ConvexPolygon<double> res(p);
+		for (int i = 0; i < (int)this->size(); i++)
+			res = res.cut(this->at(i), this->at((i + 1) % this->size()));
 		return res;
 	}
 };
 
+#pragma endregion
+
+#pragma region rounding
+int toInt(double x) {
+	return x < 0 ? int(x - eps) : int(x + eps);
+}
+
+bool whole(double x) {
+	return fabs(x - toInt(x)) < eps;
+}
+
+int roundUp(double x) {
+	if (x < 0 || whole(x))
+		return toInt(x);
+	return toInt(x + 1);
+}
+
+int roundDown(double x) {
+	if (x > 0 || whole(x))
+		return toInt(x);
+	return toInt(x - 1);
+}
 #pragma endregion
 #endif
