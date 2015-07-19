@@ -288,6 +288,9 @@ Point intersect(const Point &a, const Point &b, const Point &c, const Point &d) 
 	return Point(determinant(-C1, B1, -C2, B2) / D, determinant(A1, -C1, A2, -C2) / D);
 }
 
+template<typename Type> struct Polygon;
+template<typename Type> struct ConvexPolygon;
+
 template<typename Type> struct Polygon : public vector<Point2D<Type> > {
 
 	double getDoubleSquare() {
@@ -306,11 +309,42 @@ template<typename Type> struct Polygon : public vector<Point2D<Type> > {
 	double getSquare() {
 		return getDoubleSquare() / 2.0;
 	}
+
+	ConvexPolygon<Type> convexHull() {
+		ConvexPolygon<Type> A;
+		for (int i = 0; i < (int)this->size(); i++)
+			A.push_back(this->at(i));
+		int n = A.size();
+		if (n <= 3)
+			return A;
+
+		sort(A.begin(), A.end());
+		Point2D<Type> begin = A[0], end = A.back();
+		ConvexPolygon<Type> up, down;
+		up.push_back(begin);
+		down.push_back(begin);
+		for (int i = 1; i < n; i++) {
+			Type vec = vectorProduct(begin, end, A[i]);
+			if (vec >= 0) {
+				while (up.size() > 1 && vectorProduct(up[up.size() - 2], up.back(), A[i]) >= 0)
+					up.pop_back();
+				up.push_back(A[i]);
+			}
+			if (vec < 0 || i == n - 1) {
+				while (down.size() > 1 && vectorProduct(down[down.size() - 2], down.back(), A[i]) <= 0)
+					down.pop_back();
+				down.push_back(A[i]);
+			}
+		}
+		A = up;
+		A.insert(A.end(), down.rbegin() + 1, down.rend() - 1);
+		return A;
+	}
 };
 
 template<typename Type> struct ConvexPolygon : public Polygon<Type> {
 
-	void makeCCWDirection() {
+	void makeCCWdirection() {
 		bool allNegative = true;
 		int n = this->size();
 
@@ -336,11 +370,11 @@ template<typename Type> struct ConvexPolygon : public Polygon<Type> {
 	}
 
 	/**
-	 * @return:
-	 *  0 - outside
-	 *  1 - inside
-	 *  2 - on border
-	 */
+	* @return:
+	*  0 - outside
+	*  1 - inside
+	*  2 - on border
+	*/
 	int inPolygon(const Point2D<Type> &p) {
 		int n = (int)this->size(), i;
 		vector<char> v(n);
