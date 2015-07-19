@@ -335,12 +335,22 @@ template<typename Type> struct ConvexPolygon : public Polygon<Type> {
 			&& sign(vectorProduct(this->at(pos), this->at(pos + 1), p)) >= 0;
 	}
 
-	bool inPolygon(const Point2D<Type> &p) {
+	/**
+	 * @return:
+	 *  0 - outside
+	 *  1 - inside
+	 *  2 - on border
+	 */
+	int inPolygon(const Point2D<Type> &p) {
 		int n = (int)this->size(), i;
 		vector<char> v(n);
 		for (i = 0; i < n; i++)
 			v[i] = sign(vectorProduct(this->at(i), this->at((i + 1) % n), p));
-		return count(v.begin(), v.end(), -1) == 0 || count(v.begin(), v.end(), 1) == 0;
+		if (count(v.begin(), v.end(), -1) != 0 && count(v.begin(), v.end(), 1) != 0)
+			return 0;
+		if (count(v.begin(), v.end(), 0))
+			return 2;
+		return 1;
 	}
 
 	double getDistanceTo(Point2D<Type> p) {
