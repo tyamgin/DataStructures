@@ -174,6 +174,27 @@ template<typename Type> struct Point2D {
 	}
 };
 
+/*
+ * Проверка на пересечение отрезков [a, b] и [c, d]
+ */
+template<typename Type> bool checkSegmentIntersect(Type a, Type b, Type c, Type d) {
+	if (a > b)  
+		swap(a, b);
+	if (c > d)  
+		swap(c, d);
+	return compareTo(max(a, c), min(b, d)) <= 0;
+}
+
+/*
+ * Проверка на пересечение отрезков [a, b] и [c, d]
+ */
+template<typename Type> bool checkSegmentIntersect(const Point2D<Type> &a, const Point2D<Type> &b, const Point2D<Type> &c, const Point2D<Type> &d) {
+	return checkSegmentIntersect(a.x, b.x, c.x, d.x)
+		&& checkSegmentIntersect(a.y, b.y, c.y, d.y)
+		&& sign(vectorProduct(a, b, c)) * sign(vectorProduct(a, b, d)) <= 0
+		&& sign(vectorProduct(c, d, a)) * sign(vectorProduct(c, d, b)) <= 0;
+}
+
 template<typename Type> struct Point3D {
 
 	Type x, y, z;
@@ -293,17 +314,16 @@ template<typename Type> struct ConvexPolygon;
 
 template<typename Type> struct Polygon : public vector<Point2D<Type> > {
 
-	double getDoubleSquare() {
+	Type getDoubleSquare() {
 		int i, n = (int)this->size();
 		if (n < 3)
-			return 0.0;
-		double sum1 = sum1 = this->at(0).y * this->at(n - 1).x,
-			sum2 = sum2 = this->at(0).x * this->at(n - 1).y;
+			return Type(0);
+		Type sum = this->at(0).y * this->at(n - 1).x - this->at(0).x * this->at(n - 1).y;
 		for (i = 1; i < n; i++)
-			sum1 += this->at(i - 1).x * this->at(i).y;
+			sum += this->at(i - 1).x * this->at(i).y;
 		for (i = 1; i < n; i++)
-			sum2 += this->at(i - 1).y * this->at(i).x;
-		return fabs(sum1 - sum2);
+			sum -= this->at(i - 1).y * this->at(i).x;
+		return sum < 0 ? -sum : sum;
 	}
 
 	double getSquare() {
