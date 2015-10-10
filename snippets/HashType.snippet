@@ -18,54 +18,64 @@
 
       </Declarations>
       <Code Language="cpp">
-          <![CDATA[#define mods 5
-int mod[] = {1e9 + 7, 1e9 + 8, 1e9 + 9, 1e9 + 6, 1e9 + 5};
+          <![CDATA[#define mods 2
+int mod[] = { 1e9 + 7, 1e9 + 9, 1e9 + 3, 1e9 + 11, 1e9 + 13 };
 
 struct HashType
 {
-    int hash[mods];
+	int hash[mods];
 
-    HashType(int val = 0)
-    {
-        fill(hash, hash + mods, val);
-    }
+	HashType(int val = 0)
+	{
+		fill(hash, hash + mods, val);
+	}
 
-    HashType operator *(const HashType &h)
-    {
-        HashType res;
-        for(int i = 0; i < mods; i++)
-            res.hash[i] = (Int)hash[i] * h.hash[i] % mod[i];
-        return res;
-    }
+	HashType operator *(const HashType &h) const
+	{
+		HashType res;
+		for (int i = 0; i < mods; i++)
+			res.hash[i] = (Int)hash[i] * h.hash[i] % mod[i];
+		return res;
+	}
 
-    HashType operator +(const HashType &h)
-    {
-        HashType res;
-        for(int i = 0; i < mods; i++)
-            res.hash[i] = (hash[i] + h.hash[i]) % mod[i];
-        return res;
-    }
+	HashType operator +(const HashType &h) const
+	{
+		HashType res;
+		for (int i = 0; i < mods; i++)
+			res.hash[i] = (hash[i] + h.hash[i]) % mod[i];
+		return res;
+	}
 
-    HashType operator -(const HashType &h)
-    {
-        HashType res;
-        for(int i = 0; i < mods; i++)
-            res.hash[i] = ((Int)hash[i] - h.hash[i] + mod[i]) % mod[i];
-        return res;
-    }
+	HashType operator -(const HashType &h) const
+	{
+		HashType res;
+		for (int i = 0; i < mods; i++)
+			res.hash[i] = ((Int)hash[i] - h.hash[i] + mod[i]) % mod[i];
+		return res;
+	}
 
-    HashType operator *(int h)
-    {
-        HashType res;
-        for(int i = 0; i < mods; i++)
-            res.hash[i] = (Int)hash[i] * h % mod[i];
-        return res;
-    }
+	HashType operator *(int h) const
+	{
+		HashType res;
+		for (int i = 0; i < mods; i++)
+			res.hash[i] = (Int)hash[i] * h % mod[i];
+		return res;
+	}
 
-    bool operator ==(const HashType &h)
-    {
-        return !memcmp(hash, h.hash, mods * sizeof(int));
-    }
+	bool operator ==(const HashType &h) const
+	{
+		return !memcmp(hash, h.hash, mods * sizeof(int));
+	}
+
+	bool operator <(const HashType &h) const
+	{
+		for (int i = 0; i < mods; i++)
+		{
+			if (hash[i] != h.hash[i])
+				return hash[i] < h.hash[i];
+		}
+		return false;
+	}
 };
           ]]>
       </Code>
