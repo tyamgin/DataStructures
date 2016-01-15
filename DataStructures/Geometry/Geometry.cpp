@@ -110,6 +110,11 @@ template<typename Type> struct Point2D {
 		y -= point.y;
 	}
 
+	void operator +=(const Point2D &point) {
+		x += point.x;
+		y += point.y;
+	}
+
 	Point2D operator -(const Point2D &point) const {
 		return Point2D(x - point.x, y - point.y);
 	}
@@ -155,13 +160,9 @@ template<typename Type> struct Point2D {
 
 		Type A, B, C;
 		getABC(a, b, A, B, C);
-		double len = sqrt(A * A + B * B + 0.0);
-		double h = fabs(C / len);
-		Point2D<double> grad(A, B);
-		grad.x *= h / len;
-		grad.y *= h / len;
-		if (between(a.x, b.x, grad.x) && between(a.y, b.y, grad.y) && isOnSegment(grad, a, b) || between(a.x, b.x, -grad.x) && between(a.y, b.y, -grad.y) && isOnSegment(-grad, a, b))
-			return h;
+
+		if (sign((a.y + B)*A - (a.x + A)*B) * sign((b.y + B)*A - (b.x + A)*B) <= 0)
+			return fabs(C / sqrt(A * A + B * B + 0.0));
 		return min(a.length(), b.length());
 	}
 
