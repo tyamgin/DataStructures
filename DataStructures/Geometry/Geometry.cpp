@@ -115,6 +115,16 @@ template<typename Type> struct Point2D {
 		y += point.y;
 	}
 
+	void operator *=(double point) {
+		x *= point;
+		y *= point;
+	}
+
+	void operator /=(double by) {
+		x /= by;
+		y /= by;
+	}
+
 	Point2D operator -(const Point2D &point) const {
 		return Point2D(x - point.x, y - point.y);
 	}
@@ -176,19 +186,19 @@ template<typename Type> struct Point2D {
 };
 
 /*
- * Проверка на пересечение отрезков [a, b] и [c, d]
- */
+* Проверка на пересечение отрезков [a, b] и [c, d]
+*/
 template<typename Type> bool checkSegmentIntersect(Type a, Type b, Type c, Type d) {
-	if (a > b)  
+	if (a > b)
 		swap(a, b);
-	if (c > d)  
+	if (c > d)
 		swap(c, d);
 	return compareTo(max(a, c), min(b, d)) <= 0;
 }
 
 /*
- * Проверка на пересечение отрезков [a, b] и [c, d]
- */
+* Проверка на пересечение отрезков [a, b] и [c, d]
+*/
 template<typename Type> bool checkSegmentIntersect(const Point2D<Type> &a, const Point2D<Type> &b, const Point2D<Type> &c, const Point2D<Type> &d) {
 	return checkSegmentIntersect(a.x, b.x, c.x, d.x)
 		&& checkSegmentIntersect(a.y, b.y, c.y, d.y)
@@ -315,7 +325,14 @@ template<typename Type> struct ConvexPolygon;
 
 template<typename Type> struct Polygon : public vector<Point2D<Type> > {
 
+	Polygon<Type>(size_t size = 0u) : vector<Point2D<Type> >(size) {
+	}
+
 	Type getDoubleSquare() {
+		return abs(getSignedDoubleSquare());
+	}
+
+	Type getSignedDoubleSquare() {
 		int i, n = (int)this->size();
 		if (n < 3)
 			return Type(0);
@@ -324,7 +341,11 @@ template<typename Type> struct Polygon : public vector<Point2D<Type> > {
 			sum += this->at(i - 1).x * this->at(i).y;
 		for (i = 1; i < n; i++)
 			sum -= this->at(i - 1).y * this->at(i).x;
-		return sum < 0 ? -sum : sum;
+		return sum;
+	}
+
+	double getSignedSquare() {
+		return getSignedDoubleSquare() / 2.0;
 	}
 
 	double getSquare() {
