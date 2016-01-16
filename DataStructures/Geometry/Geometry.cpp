@@ -284,6 +284,11 @@ template<typename Type> struct Point3D {
 		return Point3D(x * p, y * p, z * p);
 	}
 
+	template<typename ByType>
+	Point3D operator /(ByType p) const {
+		return Point3D(x / p, y / p, z / p);
+	}
+
 	Type operator *(Point3D p) const {
 		return x * p.x + y * p.y + z * p.z;
 	}
