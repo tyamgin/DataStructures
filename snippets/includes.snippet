@@ -15,13 +15,15 @@
     
     <Snippet>
       <Code Language="cpp">
-          <![CDATA[#define _CRT_SECURE_NO_WARNINGS
+          <![CDATA[#define _SCL_SECURE_NO_WARNINGS
+#define _CRT_SECURE_NO_WARNINGS
 #pragma comment(linker, "/STACK:500000000") 
 #include <functional>
 #include <algorithm>
 #include <iostream> 
 #include <string.h> 
 #include <stdlib.h>
+#include <limits.h>
 #include <complex>
 #include <sstream> 
 #include <numeric>
@@ -41,7 +43,7 @@
 #define INF 0x3F3F3F3F 
 #define eps 1e-9
 using namespace std;
-
+typedef pair<int, int> pii;
 
 			  $selected$ $end$]]>
       </Code>
